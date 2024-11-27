@@ -56,6 +56,7 @@ room = "2.6.1"
 secrets = "2.0.1"
 truth = "1.4.2"
 turbine = "1.1.0"
+appSizer = "0.1.0-alpha01"
 
 [bundles]
 androidx-compose-ui-test = ["androidx-compose-ui-test", "androidx-compose-ui-testManifest"]
@@ -177,6 +178,7 @@ protobuf = { id = "com.google.protobuf", version.ref = "protobufPlugin" }
 roborazzi = { id = "io.github.takahirom.roborazzi", version.ref = "roborazzi" }
 room = { id = "androidx.room", version.ref = "room" }
 secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secrets" }
+app-sizer = { id = "com.grab.sizer", version.ref = "appSizer" }
 
 # Plugins defined by this project
 nowinandroid-android-application = { id = "nowinandroid.android.application" }

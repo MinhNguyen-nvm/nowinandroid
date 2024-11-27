@@ -26,6 +26,7 @@ plugins {
     alias(libs.plugins.baselineprofile)
     alias(libs.plugins.roborazzi)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.app.sizer)
 }
 
 android {
@@ -35,7 +36,8 @@ android {
         versionName = "0.1.2" // X.Y.Z; X = Major, Y = minor, Z = Patch level
 
         // Custom test runner to set up Hilt dependency graph
-        testInstrumentationRunner = "com.google.samples.apps.nowinandroid.core.testing.NiaTestRunner"
+        testInstrumentationRunner =
+            "com.google.samples.apps.nowinandroid.core.testing.NiaTestRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -71,6 +73,37 @@ android {
     }
     namespace = "com.google.samples.apps.nowinandroid"
 }
+
+
+appSizer {
+    enabled = true
+    projectInput {
+        apk {
+            bundleToolFile.set(project.rootProject.rootDir.resolve("app-sizer/binaries/bundletool-all-1.15.4.jar"))
+            deviceSpecs.set(
+                listOf(
+                    rootProject.rootDir.resolve("app-sizer/devices/device-1.json"),
+                    rootProject.rootDir.resolve("app-sizer/devices/device-2.json"),
+                ),
+            )
+        }
+        enableMatchDebugVariant = false
+        largeFileThreshold = 10240
+        teamMappingFile.set(rootProject.rootDir.resolve("module-owner.yml"))
+    }
+    /*
+    metrics {
+        influxDB {
+            dbName = "sizer"
+            url = "http://localhost:8086"
+            username = "root"
+            password = "root"
+        }
+    }
+
+     */
+}
+
 
 dependencies {
     implementation(projects.feature.interests)

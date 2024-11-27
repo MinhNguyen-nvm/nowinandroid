@@ -1,0 +1,40 @@
+AppTeam:
+  - app
+  - app-nia-catalog
+  - benchmarks
+
+CoreTeam:
+  - core:analytics
+  - core:common
+  - core:data
+  - core:data-test
+  - core:database
+  - core:datastore
+  - core:datastore-proto
+  - core:datastore-test
+  - core:designsystem
+  - core:domain
+  - core:model
+  - core:network
+  - core:notifications
+  - core:ui
+
+TestingTeam:
+  - core:screenshot-testing
+  - core:testing
+  - ui-test-hilt-manifest
+
+FeatureTeam:
+  - feature:foryou
+  - feature:interests
+  - feature:bookmarks
+  - feature:topic
+  - feature:search
+  - feature:settings
+
+SyncTeam:
+  - sync:work
+  - sync:sync-test
+
+QualityTeam:
+  - lint
